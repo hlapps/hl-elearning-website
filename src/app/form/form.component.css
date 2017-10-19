@@ -1,0 +1,37 @@
+header {
+    padding: 100px 0 100px;
+    background-image: url(/assets/cover.jpg);
+    background-size: cover;
+    height: auto;
+    
+  }
+
+
+.content{
+    
+     height: auto;
+     padding-top: 5em;
+    
+ }
+ .contentitulo{
+ 
+  margin-bottom: 1em;
+ 
+  
+ }
+ 
+ .form-control:invalid{
+     background-image: linear-gradient(to top, rgb(248, 6, 6) 2px,
+      rgba(0, 150, 136, 0) 2px), linear-gradient(to top, rgba(0, 0, 0, 0.26) 1px, 
+      transparent 1px);
+ }
+ 
+ .form-control{
+     background-image: linear-gradient(to top, rgb(12, 217, 224) 2px,
+      rgba(0, 150, 136, 0) 2px), linear-gradient(to top, rgba(0, 0, 0, 0.26) 1px, 
+      transparent 1px);
+ }
+ 
+ .conten{
+     background-color: rgba(138, 136, 136, 0.5);
+ }
