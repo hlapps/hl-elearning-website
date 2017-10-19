@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'signon', component: RegistryComponent },
-    { path: 'loging', component: LoginComponent }
+    { path: 'login', component: LoginComponent }
 ];
 
 export const appRoutingProviders: any[] = [];
