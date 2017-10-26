@@ -13,6 +13,8 @@ import { BannerComponent } from './banner/banner.component';
 import { RegistryComponent } from './registry/registry.component';
 import { FormComponent } from './form/form.component';
 import { FormloginComponent } from './formlogin/formlogin.component';
+import { CursosComponent } from './cursos/cursos.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormloginComponent } from './formlogin/formlogin.component';
     BannerComponent,
     RegistryComponent,
     FormComponent,
-    FormloginComponent
+    FormloginComponent,
+    CursosComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

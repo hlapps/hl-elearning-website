@@ -1,69 +1,65 @@
 <header>
     <div class="container">
-                <div class="container card col-sm-6 bg-info contentitulo" >
-                    <div class="row text-center align-items-center justify-content-center">
-                        <div class="col-lg-4 col-md-8 col-sm-12 p-3 text-light font-weight-bold">
-                             <h2>Bienvenido</h2>
+        <div class="container card col-sm-6 bg-info contentitulo">
+            <div class="row text-center align-items-center justify-content-center">
+                <div class="col-lg-4 col-md-8 col-sm-12 p-3 text-light font-weight-bold">
+                    <h2>Bienvenido</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form class="card p-5 content conten ">
+                    <div class="form-row pt-5">
+                        <div class="form-group col-md-4 col-lg-4">
+                            <label for="Nombre" class="bmd-label-floating text-light">Nombres</label>
+                            <input type="text" class="form-control text-light" id="nombre">
+                        </div>
+                        <div class="form-group col-md-4 col-lg-4">
+                            <label for="apellido" class="bmd-label-floating text-light ">Apellidos</label>
+                            <input type="text" class="form-control text-light" id="apellido">
+                        </div>
+                        <div class="form-group col-md-4 col-lg-4">
+                            <label for="phone" class="bmd-label-floating text-light ">Telefono</label>
+                            <input type="number" class="form-control" id="phone">
                         </div>
                     </div>
-                </div>     
-                <div class="container">
-                  <div class="row justify-content-center">
-                      <form class="card p-5 content conten " #formSignon="ngForm" (ngSubmit)="onSubmit()">             
-                          <div class="form-row pt-5">
-                            <div class="form-group col-md-4 col-lg-4">
-                              <label for="Nombre" class="bmd-label-floating text-light">Nombres</label>
-                              <input type="text" class="form-control" id="nombre">
-                            </div>
-                            <div class="form-group col-md-4 col-lg-4">
-                              <label for="apellido" class="bmd-label-floating text-light ">Apellidos</label>
-                              <input type="text" class="form-control" id="apellido">
-                            </div>
-                            <div class="form-group col-md-4 col-lg-4">
-                                <label for="phone" class="bmd-label-floating text-light ">Telefono</label>
-                                <input type="number" class="form-control" id="phone">   
-                            </div>
-                          </div>
-                          <div class="form-row">
-                              <div class="form-group col-md-4">
-                                  <label for="CC" class="bmd-label-floating  text-light">Documento ID</label>
-                                  <input type="number" class="form-control" id="CC">
-                              </div>
-                              <div class="form-group col-md-4">
-                                  <label for="pais" class="bmd-label-floating text-light ">Pais</label>
-                                  <input type="text" class="form-control" id="pais">
-                              </div>
-                              <div class="form-group col-md-4">
-                                  <label for="ciudad" class="bmd-label-floating text-light">Ciudad</label>
-                                  <input type="text" class="form-control" id="ciudad">
-                              </div>
-                               
-                          </div>
-                          <div class="form-row">
-                              <div class="form-group col-md-8">
-                                  
-                                  <label for="correo" class="bmd-label-floating text-light">Correo</label>
-                                  <input type="email" class="form-control" id="correo">
-                              </div>
-                              <div class="form-group col-md-4">
-                                  <label for="phone" class="bmd-label-floating text-light">Contraseña</label>
-                                  <input type="password" class="form-control" id="phone">   
-                              </div> 
-                          </div>
-                          <div class="form-group">
-                            <div class="form-check">
-                              <label class="form-check-label text-light">
-                                <input class="form-check-input" type="checkbox">He leido y estoy de acuerdo
-                                con los <a href="#">terminos y condiciones</a>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="text-center">
-                              <button type="submit" class="btn btn-raised bg-info text-light py-4 font-weight-bold">Registrar</button>
-                          </div>
-                      </form>
-                  </div>
-                  </div>
-    </div>    
-</header>
 
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="pais" class="bmd-label-floating text-light ">Pais</label>
+                            <input type="text" class="form-control text-light" id="pais">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ciudad" class="bmd-label-floating text-light">Ciudad</label>
+                            <input type="text" class="form-control text-light" id="ciudad">
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+
+                            <label for="correo" class="bmd-label-floating text-light">Correo</label>
+                            <input type="email" class="form-control text-light" id="correo">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="phone" class="bmd-label-floating text-light">Contraseña</label>
+                            <input type="password" class="form-control text-light" id="phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label text-light">
+                                <input class="form-check-input" type="checkbox">He leido y estoy de acuerdo con los
+                                <a class="col-lg-4" href="#">terminos y condiciones</a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-raised bg-info text-light py-4 font-weight-bold">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
