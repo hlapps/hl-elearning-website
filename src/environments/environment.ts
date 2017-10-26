@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   accountsManager: {
-    serviceUrl: 'http://localhost:3000/api'
+    serviceUrl: 'http://35.202.199.197:3000/api'
   }
 };

@@ -12,7 +12,13 @@ export class UsersService {
         return this._http.post(
             `${environment.accountsManager.serviceUrl}/users`,
             { origin: 'elearning-website', user })
-            .map((res) => res.json())
-            .subscribe((result) => result);
+            .map((res) => res.json());
+    }
+
+    authUser(user: User) {
+        return this._http.post(
+            `${environment.accountsManager.serviceUrl}/users/auth`,
+            { username: user.username, password: user.password })
+            .map((res) => res.json());
     }
 }

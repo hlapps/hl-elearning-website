@@ -7,50 +7,113 @@
                 </div>
             </div>
         </div>
+        <div class="row text-center align-items-center justify-content-center">
+            <div class="col-sm-6 contentitulo">
+                <div *ngIf="!formSignon.valid && showAlert" class="alert alert-danger">
+                    <div>
+                        {{errorMessage}}
+                    </div>
+                </div>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                    <div *ngIf="name.errors.required">
+                        El nombre es requerido
+                    </div>
+                </div>
+                <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger">
+                    <div *ngIf="lastname.errors.required">
+                        El apellido es requerido
+                    </div>
+                </div>
+                <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger">
+                    <div *ngIf="phone.errors.required">
+                        El teléfono es requerido
+                    </div>
+                </div>
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                    <div *ngIf="email.errors.required">
+                        El correo electrónico es requerido
+                    </div>
+                    <div *ngIf="email.errors.format">
+                        Ingrese un correo válido
+                    </div>
+                </div>
+                <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger">
+                    <div *ngIf="country.errors.required">
+                        El país es requerido
+                    </div>
+                </div>
+                <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+                    <div *ngIf="city.errors.required">
+                        La ciudad es requerida
+                    </div>
+                </div>
+                <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                    <div *ngIf="username.errors.required">
+                        El nombre de usuario es requerido
+                    </div>
+                    <div *ngIf="username.errors.minlength">
+                        El nombre de usuario debe tener almenos 8 caracteres
+                    </div>
+                </div>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                    <div *ngIf="password.errors.required">
+                        La contraseña es requerida
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                        La contraseña debe tener almenos 8 caracteres
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row justify-content-center">
-                <form class="card p-5 content conten ">
+                <form class="card p-5 content conten " #formSignon="ngForm" (ngSubmit)="onSubmit(formSignon.valid)">
                     <div class="form-row pt-5">
                         <div class="form-group col-md-4 col-lg-4">
-                            <label for="Nombre" class="bmd-label-floating text-light">Nombres</label>
-                            <input type="text" class="form-control text-light" id="nombre">
+                            <label for="name" class="bmd-label-floating text-light">Nombres</label>
+                            <input type="text" class="form-control text-light" id="name" name="name" required [(ngModel)]="student.nombre" #name="ngModel">
                         </div>
                         <div class="form-group col-md-4 col-lg-4">
-                            <label for="apellido" class="bmd-label-floating text-light ">Apellidos</label>
-                            <input type="text" class="form-control text-light" id="apellido">
+                            <label for="lastname" class="bmd-label-floating text-light ">Apellidos</label>
+                            <input type="text" class="form-control text-light" id="lastname" name="lastname" required [(ngModel)]="student.lastname"
+                                #lastname="ngModel">
                         </div>
                         <div class="form-group col-md-4 col-lg-4">
                             <label for="phone" class="bmd-label-floating text-light ">Telefono</label>
-                            <input type="number" class="form-control" id="phone">
+                            <input type="number" class="form-control text-light" id="phone" name="phone" required [(ngModel)]="student.phone" #phone="ngModel">
                         </div>
                     </div>
-
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="pais" class="bmd-label-floating text-light ">Pais</label>
-                            <input type="text" class="form-control text-light" id="pais">
+                            <label for="country" class="bmd-label-floating text-light ">Pais</label>
+                            <input type="text" class="form-control text-light" id="country" name="country" required [(ngModel)]="student.country" #country="ngModel">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="ciudad" class="bmd-label-floating text-light">Ciudad</label>
-                            <input type="text" class="form-control text-light" id="ciudad">
+                            <label for="city" class="bmd-label-floating text-light">Ciudad</label>
+                            <input type="text" class="form-control text-light" id="city" name="city" required [(ngModel)]="student.city" #city="ngModel">
                         </div>
 
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-8">
-
-                            <label for="correo" class="bmd-label-floating text-light">Correo</label>
-                            <input type="email" class="form-control text-light" id="correo">
+                        <div class="form-group col-md-4">
+                            <label for="email" class="bmd-label-floating text-light">Correo</label>
+                            <input type="email" class="form-control text-light" id="email" name="email" required [(ngModel)]="user.email" #email="ngModel">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="username" class="bmd-label-floating text-light">Usuario</label>
+                            <input type="username" class="form-control text-light" id="username" name="username" required minlength="8" [(ngModel)]="user.username"
+                                #username="ngModel">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="phone" class="bmd-label-floating text-light">Contraseña</label>
-                            <input type="password" class="form-control text-light" id="phone">
+                            <input type="password" class="form-control text-light" id="password" name="password" required minlength="8" [(ngModel)]="user.password"
+                                #password="ngModel">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
                             <label class="form-check-label text-light">
-                                <input class="form-check-input" type="checkbox">He leido y estoy de acuerdo con los
+                                <input class="form-check-input" type="checkbox" required>He leido y estoy de acuerdo con los
                                 <a class="col-lg-4" href="#">terminos y condiciones</a>
                             </label>
                         </div>

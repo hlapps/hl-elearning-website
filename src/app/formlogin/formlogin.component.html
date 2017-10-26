@@ -1,27 +1,47 @@
 <body class="cuerpo">
     <div class="container text-light">
+
         <div class="row container align-items-center justify-content-center" style="height: 100%; width: 100%; bottom: 0;position: fixed;">
             <div class="col-lg-4">
+                <div class="col-sm-6 contentitulo">
+                    <div *ngIf="!formLogin.valid && showAlert" class="alert alert-danger">
+                        <div>
+                            {{errorMessage}}
+                        </div>
+                    </div>
+                    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                        <div *ngIf="username.errors.required">
+                            El nombre de usuario es requerido
+                        </div>
+                    </div>
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                        <div *ngIf="password.errors.required">
+                            La contraseña es requerida
+                        </div>
+                    </div>
+                </div>
                 <div class="card conten">
                     <div class="card-title bg-info text-light text-center py-3">
-                        <h3>Inisio de sesion</h3>
+                        <h3>Inicio de sesion</h3>
                     </div>
                     <div class="card-body">
-                        <form action="">
+                        <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin.valid)">
                             <div class="form-row">
                                 <div class="form-group col-lg-12">
-                                    <label for="email" class="bmd-label-floating text-light">
-                                        <i class="fa fa-envelope fa-lg mx-3" aria-hidden="true"></i>Correo</label>
-                                    <input type="email" class="form-control text-light" id="email">
+                                    <label for="username" class="bmd-label-floating text-light">
+                                        <i class="fa fa-user fa-lg mx-3" aria-hidden="true"></i>Correo electrónico o usuario</label>
+                                    <input type="username" class="form-control text-light" id="username" name="username" required minlength="8" [(ngModel)]="user.username"
+                                        #username="ngModel">
                                 </div>
                                 <div class="form-group col-lg-12">
                                     <label for="password" class="bmd-label-floating text-light">
                                         <i class="fa fa-key  mx-3" aria-hidden="true"></i>Contraseña</label>
-                                    <input type="password" class="form-control text-light" id="password">
+                                    <input type="password" class="form-control text-light" id="password" name="password" required minlength="8" [(ngModel)]="user.password"
+                                        #password="ngModel">
                                 </div>
                             </div>
                             <div class="col text-center">
-                                <a href="" class="btn btn-raised bg-info text-light font-weight-bold">Ingresar</a>
+                                <button type="submit" class="btn btn-raised bg-info text-light font-weight-bold">Ingresar</button>
                             </div>
                         </form>
                     </div>
@@ -37,6 +57,7 @@
         </div>
     </div>
     <footer class="foot text-center">
-        Copyright &copy; Medical Surgery 2017 - <a class="text-light" [routerLink]="['/']" href="">INICIO</a>
+        Copyright &copy; Medical Surgery 2017 -
+        <a class="text-light" [routerLink]="['/']" href="">INICIO</a>
     </footer>
 </body>

@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { appRoutingProviders, routing } from './app.routing';
 import { FormsModule } from '@angular/forms';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { SectionComponent } from './section/section.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { RegistryComponent } from './registry/registry.component';
@@ -23,6 +25,7 @@ import { ContentComponent } from './content/content.component';
     NavComponent,
     SectionComponent,
     LoginComponent,
+    LogoutComponent,
     FooterComponent,
     BannerComponent,
     RegistryComponent,
@@ -34,7 +37,9 @@ import { ContentComponent } from './content/content.component';
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    JsonpModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
