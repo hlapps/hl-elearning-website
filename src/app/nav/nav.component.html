@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark   fixed-top p-2" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-info   sticky-top p-2" id="mainNav">
   <div class="container-fluid ">
     <a class="navbar-brand js-scroll-trigger" href="#page-top"><span class="font-weight-bold fon">MS</span> Medical Surgery</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,19 +8,19 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a href="/#page-top"  class="nav-link js-scroll-trigger text-light" href="#page-top">Inicio</a>
+          <a href="#page-top" class="nav-link js-scroll-trigger text-light font-weight-bold" href="#page-top">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger  text-light" href="#cursos">Cursos</a>
+          <a [routerLink]="['/curso']"  class="nav-link js-scroll-trigger  text-light font-weight-bold" >Cursos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger  text-light" href="#contact">Contactanos</a>
+          <a class="nav-link js-scroll-trigger  text-light font-weight-bold" href="#contact">Contactanos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger  text-light" href="#equipo">Equipo MS</a>
+            <a class="nav-link js-scroll-trigger  text-light font-weight-bold" href="#equipo">Equipo MS</a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['/signon']" class="nav-link js-scroll-trigger  text-light">Registrate</a>
+            <a [routerLink]="['/signon']" class="nav-link js-scroll-trigger  text-light font-weight-bold">Registrate</a>
           </li>
           <li class="nav-item">
             <a [routerLink]="['/login']"   class="nav-link js-scroll-trigger text-light font-weight-bold "><i class="fa fa-sign-in fa-lg mx-3" aria-hidden="true"></i>Ingresar</a>
